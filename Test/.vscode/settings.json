@@ -1,0 +1,15 @@
+{
+    "python.pythonPath": "C:\\Users\\Vadym\\envs\\Blog1\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint-flask"
+    ],
+    "python.testing.pytestArgs": [
+        "blog_1"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}
