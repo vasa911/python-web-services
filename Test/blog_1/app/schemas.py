@@ -1,4 +1,5 @@
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
+from marshmallow import fields
 from . import models
 
 
@@ -10,6 +11,7 @@ class UserSchema(SQLAlchemyAutoSchema):
 
 
 class PostSchema(SQLAlchemyAutoSchema):
+    author = fields.Nested(UserSchema)
 
     class Meta:
         model = models.Post

@@ -14,12 +14,14 @@ user_schema = schemas.UserSchema()
 
 class PortListApi(Resource):
 
-    def post(self):
+    @auth.token_required
+    def post(self, user):
         try:
             post = post_schema.load(request.json, session=db.session)
         except ValidationError as e:
             return {'message': str(e)}, 400
 
+        post.author = user
         db.session.add(post)
         db.session.commit()
         return post_schema.dump(post), 201
